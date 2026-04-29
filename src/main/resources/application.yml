@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: oriontek-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/oriontek_db
+    username: postgres
+    password: db_credentialJOn
+    driver-class-name: org.postgresql.Driver
+    data:
+      web:
+        pageable:
+          default-page-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
